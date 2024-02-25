@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "kursovik"
+version = "0.1.0"
+description = ""
+authors = ["Taushicki <ipanteleev193@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+aiohttp = "^3.9.3"
+beautifulsoup4 = "^4.12.3"
+tortoise-orm = "^0.20.0"
+pydantic = "^2.6.1"
+environs = "^10.3.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
