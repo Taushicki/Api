@@ -1,8 +1,8 @@
-from tortoise import Tortoise
-
+from tortoise.contrib.fastapi import register_tortoise
+from fastapi import FastAPI
 DB_CONFIG = {
     'connections': {
-        'default': 'postgres://postgres:password@localhost:5432/application',
+        'default': 'postgres://postgres:password@localhost:5432/application'
     },
     'apps': {
         'models': {
@@ -25,11 +25,13 @@ DB_CONFIG = {
 }
 
 class DataBaseSettings:
-    async def setup():
-        await Tortoise.init(DB_CONFIG)
-        await Tortoise.generate_schemas()
-        
-    async def close():
-        await Tortoise.close_connections()
+    def setup(app: FastAPI):
+        register_tortoise(
+            app,
+            config=DB_CONFIG,
+            modules={'models': ['database.models']},
+            generate_schemas=True,
+            add_exception_handlers=True,
+        )
         
 

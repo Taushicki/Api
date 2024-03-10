@@ -16,15 +16,15 @@ class News(Model):
 # class Weather(Model):
 #     pass
 
-class Currency(Model):
-    id = fields.IntField(pk=True)
-    name = fields.CharField(max_length=255)
-    code = fields.CharField(max_length=3)
+# class Currency(Model):
+#     id = fields.IntField(pk=True)
+#     name = fields.CharField(max_length=255)
+#     code = fields.CharField(max_length=3)
 
-class ExchangeRate(Model):
-    id = fields.IntField(pk=True)
-    currency = fields.ForeignKeyField('models.Currency', related_name='exchange_rates')
-    date = fields.DateField()
-    rate = fields.DecimalField(max_digits=10, decimal_places=4)
+# class ExchangeRate(Model):
+#     id = fields.IntField(pk=True)
+#     currency = fields.ForeignKeyField('models.Currency', related_name='exchange_rates')
+#     date = fields.DateField()
+#     rate = fields.DecimalField(max_digits=10, decimal_places=4)
     
 

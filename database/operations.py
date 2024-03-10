@@ -8,3 +8,5 @@ async def save_news(news_data):
         news = News(**news_data)
         await news.save()
     
+async def get_news(start: int, end: int):
+    return await News.filter().offset(start).limit(end - start).values() 
