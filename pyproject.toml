@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "kursovik"
+name = "api"
 version = "0.1.0"
 description = ""
 authors = ["Taushicki <ipanteleev193@gmail.com>"]
@@ -16,6 +16,7 @@ asyncpg = "^0.29.0"
 python-binance = "^1.0.19"
 fastapi = "^0.110.0"
 uvicorn = "^0.27.1"
+python-multipart = "^0.0.9"
 
 
 [build-system]

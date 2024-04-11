@@ -13,18 +13,22 @@ class News(Model):
     class Meta:
         ordering = ['-pub_date']
 
-# class Weather(Model):
-#     pass
 
-# class Currency(Model):
-#     id = fields.IntField(pk=True)
-#     name = fields.CharField(max_length=255)
-#     code = fields.CharField(max_length=3)
+class Users(Model):
+    id: int = fields.IntField(pk=True)
+    login: str = fields.CharField(max_length=20, unique=True)
+    password: str = fields.CharField(max_length=20)
+    rights: str = fields.CharField(max_length=5, default='user')
+    
+    
+    
+class FavoriteNews(Model):
+    id = fields.IntField(pk=True)
+    user = fields.ForeignKeyField('models.Users', related_name='favorite_news')
+    news = fields.ForeignKeyField('models.News', related_name='favorited_by')
 
-# class ExchangeRate(Model):
-#     id = fields.IntField(pk=True)
-#     currency = fields.ForeignKeyField('models.Currency', related_name='exchange_rates')
-#     date = fields.DateField()
-#     rate = fields.DecimalField(max_digits=10, decimal_places=4)
+    class Meta:
+        table = "favorite_news"
+
     
 

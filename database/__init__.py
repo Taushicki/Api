@@ -14,7 +14,7 @@ DB_CONFIG = {
         'default': {
             'engine': 'tortoise.backends.asyncpg',
             'credentials': {
-                'host': 'E:/Applications/PostGreSQL/16/data',
+                'host': 'localhost',
                 'port': '5432',
                 'user': 'postgres',
                 'password': 'password',
