@@ -1,6 +1,8 @@
 from tortoise.contrib.fastapi import register_tortoise
 from fastapi import FastAPI
 DB_CONFIG = {
+    'use_tz': False,
+    'timezone': 'UTC',
     'connections': {
         'default': 'postgres://postgres:password@localhost:5432/application'
     },
